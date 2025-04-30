@@ -1,4 +1,4 @@
-package br.fiap.clienteservice.exception;
+package org.fiap.api.exception;
 
 public class ClienteExistenteException {
 }

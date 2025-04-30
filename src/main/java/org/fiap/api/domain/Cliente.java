@@ -1,4 +1,4 @@
-package br.fiap.clienteservice.domain;
+package org.fiap.api.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,5 +13,5 @@ public class Cliente {
     private String nome;
     private String cpf;
     private LocalDate dataNascimento;
-    private List<Enderecos> enderecos;
+    private List<Endereco> enderecos;
 }
