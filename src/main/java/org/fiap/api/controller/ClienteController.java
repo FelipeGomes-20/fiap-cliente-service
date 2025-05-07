@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class ClienteController {
 
-    private CadastrarClienteUseCase cadastrarCliente;
+    private final CadastrarClienteUseCase cadastrarCliente;
 
     @PostMapping
     public ResponseEntity<ClienteJson> criar(@Valid @RequestBody ClienteJson clienteJson) {
@@ -41,7 +41,7 @@ public class ClienteController {
 
     private Endereco mapEnderecoJsonToDomain(EnderecoJson json) {
         return new Endereco(
-                json.getRua(), json.getNumero(),
+                json.getId(), json.getRua(), json.getNumero(),
                 json.getComplemento(), json.getBairro(),
                 json.getCidade(), json.getEstado(), json.getCep()
         );
@@ -49,7 +49,7 @@ public class ClienteController {
 
     private EnderecoJson mapEnderecoToJson(Endereco domain) {
         return new EnderecoJson(
-                domain.getRua(), domain.getNumero(),
+                domain.getId(), domain.getRua(), domain.getNumero(),
                 domain.getComplemento(), domain.getBairro(),
                 domain.getCidade(), domain.getEstado(), domain.getCep()
         );

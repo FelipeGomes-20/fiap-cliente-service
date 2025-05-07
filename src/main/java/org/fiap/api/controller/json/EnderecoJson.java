@@ -12,6 +12,8 @@ import lombok.NoArgsConstructor;
 @Builder
 public class EnderecoJson {
 
+    private Long id;
+
     @NotBlank(message = "Rua é obrigatória")
     private String rua;
 

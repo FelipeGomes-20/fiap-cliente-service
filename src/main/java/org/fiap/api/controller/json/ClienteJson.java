@@ -21,7 +21,8 @@ public class ClienteJson {
     @NotBlank(message = "Nome é obrigatório")
     private String nome;
 
-    @CPF(message = "CPF inválido")
+    //@CPF(message = "CPF inválido")
+    @Size(max = 11)
     @NotBlank(message = "CPF é obrigatório")
     private String cpf;
 
@@ -31,5 +32,6 @@ public class ClienteJson {
 
     @Size(min = 1, message = "Pelo menos um endereço é necessário")
     @NotNull(message = "Endereços são obrigatórios")
+    @Valid
     private List<EnderecoJson> enderecos;
 }
